@@ -1,0 +1,360 @@
+{
+  "business": {
+    "name": "Samiksha",
+    "brandSuffix": "Mehendi Art",
+    "logo": {
+      "image": "",
+      "height": 46,
+      "width": 0
+    },
+    "tagline1": "Beautiful designs.",
+    "tagline2": "Happy moments.",
+    "whatsapp": "8830392310",
+    "whatsappGreeting": "Hi Samiksha! I'd like to book a mehendi appointment.",
+    "rating": "4.7",
+    "bookingsCount": "500+",
+    "address": "Andheri West, Mumbai",
+    "hours": "Mon–Sun, 9 AM – 8 PM",
+    "serviceArea": "Travels across Mumbai & Thane",
+    "ctaPrimary": "Book Your Appointment",
+    "ctaSecondary": "or fill the booking form ↓",
+    "ctaSticky": "Book Now"
+  },
+  "stats": [
+    {
+      "value": "7 Years",
+      "label": "Experience"
+    },
+    {
+      "value": "500+",
+      "label": "My Happy Client's"
+    },
+    {
+      "value": "100%",
+      "label": "Natural henna"
+    }
+  ],
+  "banner": {
+    "tag": "Bridal · full hands",
+    "collage": [
+      {
+        "image": "",
+        "variant": 1,
+        "tone": 0
+      }
+    ]
+  },
+  "sections": [
+    {
+      "key": "designer",
+      "title": "Designer Mehandi",
+      "subtitle": "Signature bridal & contemporary work",
+      "items": [
+        {
+          "id": "d_bridal",
+          "label": "Full Bridal",
+          "image": "",
+          "kind": "mandala",
+          "seed": 3,
+          "tone": 0,
+          "time": "4–6 hrs",
+          "cover": "Hands + feet",
+          "from": 4999,
+          "blurb": "Full-coverage bridal work — jaali nets, layered mandalas, and the groom's initials hidden inside the pattern."
+        },
+        {
+          "id": "d_indo",
+          "label": "Indo-Western",
+          "image": "",
+          "kind": "peacock",
+          "seed": 1,
+          "tone": 1,
+          "time": "2–3 hrs",
+          "cover": "Both hands",
+          "from": 1999,
+          "blurb": "Modern geometry paired with traditional motifs. Clean lines, lots of breathing room, very photogenic on reels."
+        },
+        {
+          "id": "d_mandala",
+          "label": "Mandala Art",
+          "image": "",
+          "kind": "mandala",
+          "seed": 2,
+          "tone": 2,
+          "time": "1–2 hrs",
+          "cover": "Back of hand",
+          "from": 499,
+          "blurb": "One bold centred mandala with radiating petals and dot work. The most requested single-motif design."
+        },
+        {
+          "id": "d_jaali",
+          "label": "Jaali Net",
+          "image": "",
+          "kind": "jaali",
+          "seed": 0,
+          "tone": 3,
+          "time": "2–4 hrs",
+          "cover": "Hands + wrists",
+          "from": 2299,
+          "blurb": "Fine lattice net-work inspired by Mughal screens, filled with tiny florals. Slow, detailed, and stunning up close."
+        }
+      ]
+    },
+    {
+      "key": "figures",
+      "title": "Figures Mehandi",
+      "subtitle": "Dulha–dulhan, doli, peacocks & storytelling motifs",
+      "items": [
+        {
+          "id": "f_couple",
+          "label": "Dulha–Dulhan",
+          "image": "",
+          "kind": "couple",
+          "seed": 2,
+          "tone": 0,
+          "time": "3–5 hrs",
+          "cover": "Both palms",
+          "from": 2799,
+          "blurb": "The bride and groom drawn face to face across both palms, framed by a shehnai border and floral arches."
+        },
+        {
+          "id": "f_peacock",
+          "label": "Peacock",
+          "image": "",
+          "kind": "peacock",
+          "seed": 1,
+          "tone": 1,
+          "time": "1.5–2 hrs",
+          "cover": "One hand",
+          "from": 1699,
+          "blurb": "A full peacock with a spread tail flowing from the wrist to the fingers — the classic figure motif."
+        },
+        {
+          "id": "f_doli",
+          "label": "Doli & Baraat",
+          "image": "",
+          "kind": "doli",
+          "seed": 3,
+          "tone": 2,
+          "time": "4–6 hrs",
+          "cover": "Forearms",
+          "from": 3299,
+          "blurb": "The whole wedding procession — palanquin, dholak, baraatis — told as a scene running up the forearm."
+        },
+        {
+          "id": "f_dance",
+          "label": "Dancing Ladies",
+          "image": "",
+          "kind": "dancer",
+          "seed": 0,
+          "tone": 3,
+          "time": "2–3 hrs",
+          "cover": "Both hands",
+          "from": 1899,
+          "blurb": "Rajasthani ghoomar dancers in a ring, skirts fanning out, with mirror-dot detailing between them."
+        }
+      ]
+    },
+    {
+      "key": "arabic",
+      "title": "Arabic Mehandi",
+      "subtitle": "Bold flowing florals with open, airy spacing",
+      "items": [
+        {
+          "id": "a_floral",
+          "label": "Floral Vines",
+          "image": "",
+          "kind": "arabic",
+          "seed": 1,
+          "tone": 1,
+          "time": "45–60 min",
+          "cover": "One hand",
+          "from": 1199,
+          "blurb": "A single diagonal vine of roses and leaves sweeping from wrist to index finger. Fast, bold, always flattering."
+        },
+        {
+          "id": "a_bold",
+          "label": "Bold Leafy",
+          "image": "",
+          "kind": "arabic2",
+          "seed": 2,
+          "tone": 0,
+          "time": "60–90 min",
+          "cover": "Both hands",
+          "from": 1499,
+          "blurb": "Thick strokes, heavy shading, and large leaf clusters. Reads beautifully from a distance in photos."
+        },
+        {
+          "id": "a_gulf",
+          "label": "Gulf Style",
+          "image": "",
+          "kind": "arabic",
+          "seed": 3,
+          "tone": 3,
+          "time": "1–2 hrs",
+          "cover": "Hands + wrists",
+          "from": 1799,
+          "blurb": "Khaleeji-inspired outlines with glitter-free shading and long trailing tendrils down the fingers."
+        },
+        {
+          "id": "a_min",
+          "label": "Minimal Arabic",
+          "image": "",
+          "kind": "arabic2",
+          "seed": 0,
+          "tone": 2,
+          "time": "20–35 min",
+          "cover": "Back of hand",
+          "from": 899,
+          "blurb": "A slim floral trail on one or two fingers only. Perfect for office days, small pujas and last-minute plans."
+        }
+      ]
+    }
+  ],
+  "pricing": {
+    "title": "Pricing Packages",
+    "subtitle": "Per person · bridal includes a free trial",
+    "note": "Group and festival bookings get a per-person discount.",
+    "packages": [
+      {
+        "name": "Basic",
+        "price": 999,
+        "desc": "Simple & elegant<br>One hand, back side",
+        "badge": ""
+      },
+      {
+        "name": "Bridal",
+        "price": 2999,
+        "desc": "Intricate & traditional<br>Full hands + feet",
+        "badge": "MOST BOOKED"
+      },
+      {
+        "name": "Premium",
+        "price": 4999,
+        "desc": "Full hand & more<br>Bridal + 4 guests",
+        "badge": ""
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What My Customers Say's",
+    "subtitle": "4.9 average from 480 bookings",
+    "items": [
+      {
+        "name": "Ananya R.",
+        "meta": "Wedding, Jan 2026",
+        "text": "Samiksha did my bridal mehendi at 5 AM without a single complaint. The stain came out almost black by the next morning. Guests kept asking for her number."
+      },
+      {
+        "name": "Fatima S.",
+        "meta": "Eid, Mar 2026",
+        "text": "Booked her for eight of us at home. Fast, spotless, and she brought her own stool and light. Worth every rupee."
+      },
+      {
+        "name": "Divya M.",
+        "meta": "Karwa Chauth, Oct 2025",
+        "text": "I wanted something minimal for work the next day and she got it exactly right. Very good at reading what you actually want."
+      },
+      {
+        "name": "Sneha K.",
+        "meta": "Engagement, Feb 2026",
+        "text": "The dulha-dulhan figures on my palms were unbelievable. Everyone at the sangeet wanted photos of my hands."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book Your Date Today",
+    "subtitle": "Usually confirmed within 2 hours",
+    "submitLabel": "Request Booking",
+    "occasions": [
+      "Wedding",
+      "Engagement",
+      "Festival",
+      "Baby shower",
+      "Other"
+    ],
+    "locations": [
+      "At my home",
+      "At the studio",
+      "Event venue"
+    ],
+    "designPlaceholder": "Let Samiksha suggest"
+  },
+  "assistant": {
+    "headerTitle": "AI Assistant",
+    "headerSubtitle": "Ask about designs, prices, dates",
+    "greeting": "Hi! I'm Samiksha's assistant ✦\nAsk me about designs, prices, timings or aftercare — or tap a question below.",
+    "quick": [
+      "What does bridal cost?",
+      "Show me figures mehandi",
+      "How long does it last?",
+      "Do you come to my home?"
+    ],
+    "fallback": "I can help with our three catalogues — Designer, Figures and Arabic Mehandi — plus pricing, aftercare, travel, or booking a date. Which would you like?",
+    "rules": [
+      {
+        "k": "price|cost|rate|charge|how much|package|budget",
+        "r": "Three packages: Basic Rs 999 (one hand, simple), Bridal Rs 2999 (full hands + feet, includes a free trial), and Premium Rs 4999 (bride + 4 guests). Individual designs start from Rs 899 — tap Book Now for an exact quote."
+      },
+      {
+        "k": "figure|dulha|dulhan|couple|doli|baraat|peacock|dancing",
+        "r": "Figures Mehandi is Samiksha's speciality — Dulha–Dulhan portraits, peacocks, the doli and baraat scene, and ghoomar dancers. These run Rs 1699 to Rs 3299 depending on coverage."
+      },
+      {
+        "k": "designer|jaali|mandala|indo|western",
+        "r": "Designer Mehandi covers Full Bridal (Rs 2999), Indo-Western (Rs 1999), Mandala Art (Rs 1299) and Jaali Net (Rs 2299). Tap any tile in that section to see the details."
+      },
+      {
+        "k": "arabic|arebic|gulf|khaleeji|floral",
+        "r": "Arabic Mehandi is bold flowing florals with open spacing — Floral Vines from Rs 1199, Bold Leafy Rs 1499, Gulf Style Rs 1799, and Minimal Arabic from Rs 899. Most take under 90 minutes."
+      },
+      {
+        "k": "bridal|wedding|shaadi",
+        "r": "Bridal is Rs 2999 for full hands and feet, 4–6 hours, with a free trial session beforehand. In wedding season (Nov–Feb) dates go 2–3 months ahead, so book early."
+      },
+      {
+        "k": "experience|years|qualified",
+        "r": "Samiksha has 7 years of experience and has done mehendi for over 500 brides, with a 4.9 rating across 480 bookings."
+      },
+      {
+        "k": "dark|stain|colour|color|last|fade|aftercare",
+        "r": "Keep the paste on 6–8 hours, then scrape it off instead of washing. Avoid water for 12 hours and dab on mustard oil. The colour darkens over 48 hours and lasts 7–10 days."
+      },
+      {
+        "k": "chemical|ppd|safe|allerg|natural|black henna",
+        "r": "100% natural henna — no PPD or black henna, which can burn skin. Safe for kids and pregnancy. Do mention any allergies in your booking note."
+      },
+      {
+        "k": "travel|home|come|venue|location|area|andheri|thane|mumbai",
+        "r": "Samiksha is based in Andheri West and travels across Mumbai and Thane. Travel is free within 10 km, Rs 300 beyond that. Home, venue, or studio all work."
+      },
+      {
+        "k": "time|hour|open|when|slot|morning|early",
+        "r": "Hours are 9 AM to 8 PM, all seven days. Early-morning bridal slots (even 5 AM) can be arranged — just mention the time when you book."
+      },
+      {
+        "k": "book|appointment|reserve|available|date|whatsapp|number|contact",
+        "r": "Tap Book Now, or message 88303 92310 directly on WhatsApp. A 30% deposit holds the date, refundable up to 7 days before."
+      },
+      {
+        "k": "cancel|refund|deposit|advance",
+        "r": "The deposit is 30% of the package, fully refundable if you cancel more than 7 days before your date."
+      },
+      {
+        "k": "group|friends|family|bulk|how many people",
+        "r": "Group bookings are very common. Premium (Rs 4999) covers the bride plus 4 guests, and larger groups get a per-person discount."
+      },
+      {
+        "k": "^(hi|hello|hey|namaste|salaam)",
+        "r": "Namaste! I can help with designs, pricing, timings or aftercare. What are you planning for?"
+      },
+      {
+        "k": "thank|thanks|great|nice",
+        "r": "Happy to help! Tap Book Now whenever you're ready and Samiksha will take it from there."
+      }
+    ]
+  },
+  "footer": {
+    "text": "© {year} Samiksha Mehandi Arts"
+  }
+}

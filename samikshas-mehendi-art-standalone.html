@@ -1096,16 +1096,13 @@ function logoTag(b) {
 
 /* ---------------- boot ---------------- */
 (async function boot() {
-  // used by the single-file preview build
-  if (window.__INLINE_CONTENT__) { C = window.__INLINE_CONTENT__; render(); return; }
-
   /* Tries each source in turn:
      1. the live site's API, if this is the phone app (set in app-config.js)
      2. the API on the same origin (normal website)
      3. a bundled copy (phone app offline, or a plain static host) */
   const sources = [];
   if (window.__API_BASE__) sources.push(window.__API_BASE__.replace(/\/$/, '') + '/api/content');
-  sources.push('/api/content', 'content.json', 'data/content.json');
+  sources.push('/api/content', 'content.default.json', 'content.json', 'data/content.json');
 
   for (const url of sources) {
     try {
@@ -1116,6 +1113,9 @@ function logoTag(b) {
       C = null;
     } catch (e) { /* try the next one */ }
   }
+
+  // used by the single-file preview build and as a final static fallback
+  if (!C && window.__INLINE_CONTENT__) { C = window.__INLINE_CONTENT__; render(); return; }
 
   if (!C) {
     document.getElementById('root').innerHTML = `

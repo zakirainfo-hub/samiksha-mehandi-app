@@ -1,11 +1,18 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "samiksha-mehandi",
-  "compatibility_date": "2026-09-10",
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "public"
-  }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "samiksha-mehandi",
+	"main": "src/index.js",
+	"compatibility_date": "2026-09-10",
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "public"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CONTENT",
+			"id": "703ed8a653784d37958c8e28ad6eb777"
+		}
+	]
 }
