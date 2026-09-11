@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samiksha's Mehendi Art</title>
+<meta name="description" content="Bridal, figures and Arabic mehendi in Mumbai. Browse designs, see pricing, and book your date.">
+
+<!-- installable app -->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#D9531E">
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Samiksha Mehendi">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- link previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samiksha's Mehendi Art">
+<meta property="og:description" content="Beautiful designs. Happy moments. Book your mehendi date.">
+<meta property="og:image" content="/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<style>
+/* ============================================================
+   Samiksha's Mehendi Art
+   Mobile-first. Breakpoints: 420 / 600 / 900 / 1200
+   ============================================================ */
+:root{
+  color-scheme: light;
+  --cream:#FDF3E7; --cream-2:#FFFAF3; --card:#FFFCF7;
+  --orange:#D9531E; --orange-d:#B8410F; --orange-l:#F5E0D2;
+  --brown:#6B2E1B; --ink:#4A2C1A; --muted:#8A6A55; --line:#EBD8C4;
+  --shadow:0 2px 10px rgba(107,46,27,.07);
+  --shadow-l:0 8px 30px rgba(107,46,27,.14);
+  --r:16px;
+  --pad:20px;
+  --maxw:560px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+img,svg{max-width:100%}
+.script{font-family:"Snell Roundhand","Brush Script MT","Segoe Script","Lucida Handwriting","Apple Chancery",cursive;font-weight:700}
+.app{max-width:var(--maxw);margin:0 auto;padding:0 0 96px;position:relative}
+section{scroll-margin-top:70px}
+
+/* ---------------- top bar ---------------- */
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:14px;
+  padding:10px var(--pad);background:rgba(253,243,231,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .2s}
+.topbar.stuck{border-bottom-color:var(--line)}
+.topbar .brand{font-weight:700;font-size:15px;color:var(--brown);letter-spacing:.2px;flex:1;min-width:0;
+  display:flex;align-items:center}
+.topbar .brand em{font-style:normal;color:var(--orange)}
+.brandlogo{display:block;max-width:100%;object-fit:contain;object-position:left center}
+.topbar .rate{font-size:12px;color:var(--muted);white-space:nowrap}
+.navlinks{display:none}
+.navcta{display:none}
+
+/* ---------------- banner ---------------- */
+.banner{margin:14px 14px 0;padding:20px 18px;
+  background:linear-gradient(155deg,#FFF7EC 0%,#FBEBD8 55%,#F8E2CB 100%);
+  border:1px solid #F0DCC5;border-radius:24px;box-shadow:0 6px 26px rgba(107,46,27,.09);
+  position:relative;overflow:hidden}
+.banner::after{content:"";position:absolute;right:-60px;top:-70px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,83,30,.10),rgba(217,83,30,0) 70%)}
+.hero-grid{display:grid;grid-template-columns:1fr 44%;gap:10px;align-items:center;position:relative;z-index:1}
+h1.title{margin:0;line-height:.92}
+h1.title .l1{display:block;font-size:clamp(40px,13vw,58px);color:var(--brown);letter-spacing:.5px}
+h1.title .l2{display:block;font-size:clamp(21px,6.8vw,29px);color:var(--orange);font-weight:800;letter-spacing:-.5px;margin-top:8px}
+.tag{margin:13px 0 0;font-size:clamp(14px,3.9vw,15.5px);color:var(--ink);font-weight:500}
+.divider{display:flex;align-items:center;gap:6px;margin:11px 0 16px}
+.divider svg{max-width:100%;height:auto}
+.cta{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--orange);color:#fff;border:0;
+  padding:13px 20px;border-radius:999px;font-size:clamp(13.5px,3.7vw,15px);font-weight:700;cursor:pointer;
+  box-shadow:0 6px 18px rgba(217,83,30,.32);transition:transform .12s,box-shadow .12s,background .12s}
+.cta:hover{background:var(--orange-d);transform:translateY(-1px);box-shadow:0 10px 24px rgba(217,83,30,.38)}
+.altlink{display:block;margin:9px 0 0;font-size:12px;color:var(--muted);background:none;border:0;padding:0;
+  cursor:pointer;font-family:inherit;text-decoration:underline;text-underline-offset:2px;text-align:left}
+.altlink:hover{color:var(--orange)}
+
+/* one banner photo (default) */
+.collage{position:relative;aspect-ratio:3/4;max-height:260px;margin-left:auto;width:100%}
+.pcardimg{position:absolute;border-radius:16px;overflow:hidden;background:#F5D3B0;
+  border:3px solid #fff;box-shadow:0 8px 22px rgba(107,46,27,.20)}
+.pcardimg svg,.pcardimg img{width:100%;height:100%;display:block;object-fit:cover}
+.collage.solo .pcardimg{inset:0;transform:rotate(2.5deg)}
+.collage.stacked .p0{width:74%;height:78%;left:0;top:6%;transform:rotate(-7deg)}
+.collage.stacked .p1{width:80%;height:86%;right:-4%;top:14%;transform:rotate(5deg)}
+.imgtag{position:absolute;left:2px;bottom:6px;z-index:3;background:#fff;color:var(--brown);
+  font-size:9.5px;font-weight:800;padding:4px 9px;border-radius:999px;
+  box-shadow:0 3px 10px rgba(107,46,27,.18);letter-spacing:.3px}
+
+/* ---------------- trust ---------------- */
+.trust{display:flex;gap:8px;padding:14px var(--pad) 0}
+.trust div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:10px 6px;text-align:center;box-shadow:var(--shadow);min-width:0}
+.trust b{display:block;font-size:clamp(14px,4vw,16px);color:var(--orange);letter-spacing:-.3px}
+.trust span{font-size:10.5px;color:var(--muted);display:block;line-height:1.25}
+
+/* ---------------- sections ---------------- */
+.sec{padding:28px var(--pad) 0}
+.secflush{padding-left:0;padding-right:0}
+.secflush-h{padding:0 var(--pad)}
+.sec-h{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 6px}
+.sec-h h2{margin:0;font-size:clamp(17px,5vw,20px);color:var(--brown);font-weight:800;letter-spacing:-.3px;
+  white-space:nowrap;text-align:center}
+.sec-h svg{flex:0 0 auto}
+.sec-sub{text-align:center;font-size:11.5px;color:var(--muted);margin:0 0 15px;padding:0 8px}
+
+/* ---------------- gallery ---------------- */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{border:0;padding:0;background:none;cursor:pointer;text-align:center;display:flex;flex-direction:column;gap:7px;
+  -webkit-tap-highlight-color:transparent}
+.tile .thumb{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .15s,box-shadow .15s}
+.tile:active .thumb{transform:scale(.97)}
+.tile:hover .thumb{transform:translateY(-2px);box-shadow:var(--shadow-l)}
+.tile .thumb svg,.tile .thumb img{width:100%;height:100%;display:block;object-fit:cover}
+.tile .lbl{font-size:12.5px;font-weight:700;color:var(--brown);line-height:1.25}
+.fav{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;
+  background:rgba(255,252,247,.92);display:grid;place-items:center;font-size:12px;color:var(--orange);
+  box-shadow:0 1px 4px rgba(0,0,0,.15)}
+
+/* ---------------- pricing ---------------- */
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 8px;
+  text-align:center;cursor:pointer;box-shadow:var(--shadow);position:relative;min-width:0;
+  transition:transform .15s,box-shadow .15s,border-color .15s}
+.pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow-l)}
+.pcard.on{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 10px 26px rgba(217,83,30,.3)}
+.pcard .pn{font-size:clamp(13px,3.8vw,15px);font-weight:800;color:var(--brown)}
+.pcard.on .pn{color:#fff}
+.pcard .pp{font-size:clamp(18px,5.6vw,23px);font-weight:800;margin:6px 0 8px;color:var(--ink);letter-spacing:-.5px}
+.pcard.on .pp{color:#fff}
+.pcard .pd{font-size:10.5px;color:var(--muted);line-height:1.35}
+.pcard.on .pd{color:rgba(255,255,255,.9)}
+.badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--brown);color:#fff;
+  font-size:8.5px;font-weight:800;padding:3px 8px;border-radius:999px;letter-spacing:.4px;white-space:nowrap}
+.pnote{text-align:center;font-size:11.5px;color:var(--muted);margin:12px 0 0}
+
+/* ---------------- reviews ---------------- */
+.revs{display:flex;gap:10px;overflow-x:auto;padding:2px var(--pad) 6px;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch}
+.revs::-webkit-scrollbar{height:0}
+.rev{flex:0 0 80%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:14px;box-shadow:var(--shadow)}
+.rev .st{color:#E8A33D;font-size:12px;letter-spacing:1px}
+.rev p{margin:7px 0 10px;font-size:13px;color:var(--ink);line-height:1.5}
+.rev .who{display:flex;align-items:center;gap:8px}
+.av{width:26px;height:26px;border-radius:50%;background:var(--orange-l);color:var(--brown);
+  display:grid;place-items:center;font-size:11px;font-weight:800;flex:0 0 auto}
+.rev .who span{font-size:11.5px;color:var(--muted)}
+
+/* ---------------- booking form ---------------- */
+.form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.field{margin-bottom:12px;min-width:0}
+.field label{display:block;font-size:11.5px;font-weight:700;color:var(--brown);margin-bottom:5px;letter-spacing:.2px}
+.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid var(--line);
+  border-radius:11px;background:var(--cream-2);font-size:16px;color:var(--ink);font-family:inherit}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(217,83,30,.35);border-color:var(--orange)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.fgrid .full{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1px solid var(--line);background:var(--cream-2);color:var(--ink);padding:8px 13px;
+  border-radius:999px;font-size:12.5px;cursor:pointer;font-family:inherit;transition:.12s}
+.chip:hover{border-color:var(--orange)}
+.chip.on{background:var(--orange);border-color:var(--orange);color:#fff;font-weight:600}
+.err{color:#B8410F;font-size:11.5px;margin:-6px 0 10px;display:none}
+.err.show{display:block}
+.submit{width:100%;margin-top:6px;background:var(--orange);color:#fff;border:0;border-radius:13px;padding:14px;
+  font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 6px 16px rgba(217,83,30,.28)}
+.submit:hover{background:var(--orange-d)}
+.ok{text-align:center;padding:10px 4px}
+.ok .tick{width:52px;height:52px;border-radius:50%;background:var(--orange);color:#fff;
+  display:grid;place-items:center;margin:4px auto 12px;font-size:26px}
+.ok h3{margin:0 0 6px;color:var(--brown);font-size:18px}
+.ok p{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+.summary{background:var(--cream);border:1px dashed var(--line);border-radius:13px;padding:12px;text-align:left;margin-bottom:14px}
+.summary div{display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0;gap:12px}
+.summary div span:first-child{color:var(--muted);flex:0 0 auto}
+.summary div span:last-child{font-weight:700;color:var(--ink);text-align:right}
+.linkbtn{background:none;border:0;color:var(--orange);font-weight:700;font-size:13px;cursor:pointer;
+  font-family:inherit;text-decoration:underline}
+
+/* ---------------- footer & sticky bar ---------------- */
+.foot{text-align:center;margin:34px var(--pad) 0;padding:18px 0 6px;
+  border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.2px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;max-width:var(--maxw);margin:0 auto;
+  padding:10px var(--pad) calc(14px + env(safe-area-inset-bottom));
+  background:linear-gradient(to top,var(--cream) 62%,rgba(253,243,231,0))}
+.sticky a{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  background:var(--orange);color:#fff;border-radius:14px;padding:15px;font-size:16px;font-weight:800;
+  box-shadow:0 8px 22px rgba(217,83,30,.35)}
+.sticky a:hover{background:var(--orange-d)}
+
+/* ---------------- design detail: bottom sheet ---------------- */
+.scrim{position:fixed;inset:0;background:rgba(74,44,26,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:var(--maxw);margin:0 auto;background:var(--cream-2);
+  border-radius:22px 22px 0 0;padding:8px var(--pad) calc(24px + env(safe-area-inset-bottom));
+  transform:translateY(102%);transition:transform .28s cubic-bezier(.22,1,.36,1);max-height:88vh;overflow-y:auto;
+  box-shadow:0 -8px 40px rgba(107,46,27,.25)}
+.sheet.on{transform:translateY(0)}
+.grab{width:38px;height:4px;border-radius:99px;background:var(--line);margin:6px auto 14px}
+.sheet h3{margin:0 0 4px;color:var(--brown);font-size:20px}
+.sheet .sub{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.detail-art{width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+.detail-art svg,.detail-art img{width:100%;height:100%;display:block;object-fit:cover}
+.meta{display:flex;gap:8px;margin-bottom:14px}
+.meta div{flex:1;background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:9px;text-align:center;min-width:0}
+.meta b{display:block;font-size:12.5px;color:var(--brown)}
+.meta span{font-size:10px;color:var(--muted)}
+
+/* ---------------- assistant ---------------- */
+.ai-fab{position:fixed;right:16px;bottom:calc(82px + env(safe-area-inset-bottom));z-index:55;
+  width:54px;height:54px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(140deg,#6D3BF5,#4A21C9);color:#fff;
+  box-shadow:0 8px 24px rgba(74,33,201,.42);display:grid;place-items:center;transition:transform .15s}
+.ai-fab:hover{transform:scale(1.06)}
+.ai-fab .dot{position:absolute;top:2px;right:2px;width:11px;height:11px;border-radius:50%;background:#3ECF8E;border:2px solid var(--cream)}
+.ai-panel{position:fixed;z-index:62;right:16px;bottom:calc(82px + env(safe-area-inset-bottom));
+  width:min(340px,calc(100vw - 32px));height:min(460px,calc(100vh - 170px));background:#fff;border-radius:20px;
+  box-shadow:0 20px 60px rgba(40,20,80,.3);display:flex;flex-direction:column;overflow:hidden;
+  transform:translateY(12px) scale(.96);opacity:0;pointer-events:none;transition:.2s cubic-bezier(.22,1,.36,1)}
+.ai-panel.on{transform:none;opacity:1;pointer-events:auto}
+.ai-head{background:linear-gradient(140deg,#6D3BF5,#4A21C9);color:#fff;padding:13px 15px;display:flex;align-items:center;gap:10px}
+.ai-head .t{flex:1;min-width:0}
+.ai-head b{display:block;font-size:14px}
+.ai-head small{font-size:10.5px;opacity:.85}
+.ai-head button{background:rgba(255,255,255,.18);border:0;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;flex:0 0 auto}
+.ai-body{flex:1;overflow-y:auto;padding:14px;background:#FAF8FF;display:flex;flex-direction:column;gap:9px}
+.msg{max-width:86%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.45;white-space:pre-wrap}
+.msg.bot{background:#fff;border:1px solid #EAE4FA;color:#2E2543;align-self:flex-start;border-bottom-left-radius:5px}
+.msg.me{background:#5A2BE0;color:#fff;align-self:flex-end;border-bottom-right-radius:5px}
+.qr{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px;background:#FAF8FF}
+.qr button{background:#fff;border:1px solid #DED5F7;color:#5A2BE0;font-size:11.5px;padding:6px 11px;border-radius:999px;cursor:pointer;font-family:inherit}
+.qr button:hover{background:#F2EDFF}
+.ai-foot{display:flex;gap:7px;padding:10px;border-top:1px solid #EEE9F8;background:#fff}
+.ai-foot input{flex:1;min-width:0;border:1px solid #E4DDF6;border-radius:999px;padding:9px 14px;font-size:16px;font-family:inherit;background:#FAF8FF}
+.ai-foot input:focus{outline:none;border-color:#8B6BF5}
+.ai-foot button{background:#5A2BE0;border:0;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;flex:0 0 auto}
+.typing{display:flex;gap:3px;padding:11px 13px}
+.typing i{width:5px;height:5px;border-radius:50%;background:#B4A3E8;animation:bl 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.3}30%{opacity:1}}
+
+/* ---------------- misc ---------------- */
+.loadfail{max-width:520px;margin:60px auto;padding:24px;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;box-shadow:var(--shadow);font-size:14px;line-height:1.6}
+.loadfail h2{margin:0 0 10px;color:var(--brown);font-size:18px}
+.loadfail code{background:var(--cream);padding:2px 7px;border-radius:6px;font-size:13px}
+#installBtn{display:none;position:fixed;left:16px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:55;
+  background:#fff;color:var(--brown);border:1px solid var(--line);font-size:11.5px;font-weight:700;
+  padding:8px 13px;border-radius:999px;box-shadow:0 6px 18px rgba(107,46,27,.18);cursor:pointer;font-family:inherit}
+#installBtn.show{display:block}
+
+/* ============================================================
+   VERY SMALL PHONES  (< 420px)
+   ============================================================ */
+@media (max-width:419px){
+  :root{--pad:15px}
+  .banner{margin:10px 10px 0;padding:16px 14px}
+
+  /* text on the left, photo on the right — same as every other size */
+  .hero-grid{grid-template-columns:1fr 40%;gap:10px}
+  .collage{aspect-ratio:3/4;max-height:none}
+  h1.title .l1{font-size:clamp(28px,9.4vw,42px)}
+  h1.title .l2{font-size:clamp(15px,4.9vw,21px);margin-top:5px}
+  .tag{font-size:12.5px;margin-top:9px;line-height:1.35}
+  .divider{margin:8px 0 11px}
+  .cta{padding:10px 13px;font-size:11.5px;gap:6px;line-height:1.25;text-align:left}
+  .cta svg{width:14px;height:14px;flex:0 0 auto}
+  .altlink{font-size:10.5px;margin-top:7px}
+  .imgtag{font-size:8.5px;padding:3px 7px;left:1px;bottom:4px}
+
+  .price{grid-template-columns:1fr;gap:10px}
+  .pcard{padding:14px 12px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px 14px;text-align:left}
+  .pcard .pn{grid-column:1;font-size:15px}
+  .pcard .pp{grid-column:2;grid-row:1;margin:0;text-align:right;font-size:20px}
+  .pcard .pd{grid-column:1/-1;font-size:11px}
+  .badge{left:auto;right:12px;transform:none}
+  .rev{flex-basis:88%}
+  .meta{flex-wrap:wrap}
+  .meta div{flex:1 1 30%}
+  .fgrid{grid-template-columns:1fr}
+  /* let long headings wrap instead of overflowing */
+  .sec-h{gap:8px}
+  .sec-h h2{white-space:normal}
+  .sec-h svg{width:30px}
+}
+
+/* ============================================================
+   LARGER PHONES  (>= 420px)
+   ============================================================ */
+@media (min-width:420px){
+  .gal{grid-template-columns:repeat(4,1fr);gap:10px}
+  .tile .lbl{font-size:10.5px}
+}
+
+/* ============================================================
+   TABLET  (>= 600px)
+   ============================================================ */
+@media (min-width:600px){
+  :root{--maxw:680px;--pad:26px}
+  .topbar{padding:12px 26px}
+  .topbar .brand{font-size:17px}
+  .banner{margin:18px 20px 0;padding:26px 24px 20px;border-radius:28px}
+  .hero-grid{gap:20px}
+  .tile .lbl{font-size:12px}
+  .rev{flex-basis:58%}
+  .trust div{padding:12px 10px}
+  .sheet{border-radius:24px 24px 0 0}
+}
+
+/* ============================================================
+   DESKTOP  (>= 900px)
+   ============================================================ */
+@media (min-width:900px){
+  :root{--maxw:1000px;--pad:32px}
+  body{background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(217,83,30,.06), transparent 60%),
+    var(--cream)}
+  .app{padding-bottom:40px}
+
+  /* header becomes a real nav */
+  .topbar{padding:14px 32px;gap:26px}
+  .topbar .brand{flex:0 0 auto;font-size:18px}
+  .navlinks{display:flex;gap:22px;flex:1}
+  .navlinks a{color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:600;
+    padding:4px 0;border-bottom:2px solid transparent;transition:.15s;white-space:nowrap}
+  .navlinks a:hover{color:var(--orange);border-bottom-color:var(--orange)}
+  .topbar .rate{font-size:12.5px}
+  .navcta{display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;
+    text-decoration:none;font-size:13.5px;font-weight:700;padding:9px 18px;border-radius:999px;
+    box-shadow:0 4px 14px rgba(217,83,30,.28);white-space:nowrap;transition:.15s}
+  .navcta:hover{background:var(--orange-d)}
+
+  /* the bottom bar is for touch devices only */
+  .sticky{display:none}
+  .ai-fab,.ai-panel{bottom:24px;right:24px}
+  #installBtn{display:none !important}
+
+  /* banner */
+  .banner{margin:26px var(--pad) 0;padding:44px 44px 30px;border-radius:32px}
+  .hero-grid{grid-template-columns:1fr 40%;gap:40px}
+  h1.title .l1{font-size:76px}
+  h1.title .l2{font-size:36px}
+  .tag{font-size:18px;margin-top:18px}
+  .cta{padding:15px 26px;font-size:16px}
+  .altlink{font-size:13px}
+  .collage{max-height:330px;aspect-ratio:4/5}
+  .imgtag{font-size:11px;padding:5px 12px;left:6px;bottom:10px}
+
+  .trust{gap:14px;padding-top:22px}
+  .trust div{padding:16px 12px;border-radius:14px}
+  .trust b{font-size:22px}
+  .trust span{font-size:12px}
+
+  .sec{padding:52px var(--pad) 0}
+  .sec-h h2{font-size:26px}
+  .sec-h{gap:14px;margin-bottom:8px}
+  .sec-sub{font-size:13px;margin-bottom:24px}
+
+  .gal{gap:18px}
+  .tile .lbl{font-size:13.5px}
+
+  .price{grid-template-columns:repeat(3,1fr);gap:18px}
+  .pcard{padding:26px 18px;border-radius:20px}
+  .pcard .pn{font-size:17px}
+  .pcard .pp{font-size:30px}
+  .pcard .pd{font-size:12.5px}
+  .badge{font-size:10px;padding:4px 12px;top:-11px}
+  .pnote{font-size:13px;margin-top:18px}
+
+  /* reviews as a grid, no sideways scrolling */
+  .secflush{padding-left:var(--pad);padding-right:var(--pad)}
+  .secflush-h{padding:0}
+  .revs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;overflow:visible;padding:0}
+  .rev{flex:none;padding:20px;border-radius:18px}
+  .rev p{font-size:14px}
+
+  /* booking form side by side with a note panel */
+  .form{padding:30px;border-radius:24px;max-width:760px;margin:0 auto}
+  .fgrid{gap:0 18px}
+  .submit{font-size:16px;padding:16px;max-width:340px;margin:14px auto 0;display:block}
+
+  .foot{margin-top:52px;padding-top:22px;font-size:13px}
+
+  /* design detail becomes a centred dialog */
+  .sheet{left:50%;right:auto;bottom:auto;top:50%;max-width:560px;width:92vw;
+    transform:translate(-50%,-50%) scale(.94);opacity:0;
+    border-radius:24px;padding:22px 26px 26px;max-height:86vh;
+    transition:transform .22s cubic-bezier(.22,1,.36,1),opacity .18s;
+    box-shadow:0 30px 80px rgba(107,46,27,.32)}
+  .sheet.on{transform:translate(-50%,-50%) scale(1);opacity:1}
+  .grab{display:none}
+  .sheet h3{font-size:24px}
+  .detail-art{aspect-ratio:16/9}
+  .meta b{font-size:14px}
+  .meta span{font-size:11px}
+}
+
+/* ============================================================
+   WIDE DESKTOP  (>= 1200px)
+   ============================================================ */
+@media (min-width:1200px){
+  :root{--maxw:1120px;--pad:40px}
+  h1.title .l1{font-size:86px}
+  h1.title .l2{font-size:40px}
+  .banner{padding:54px 54px 34px}
+  .collage{max-height:370px}
+  .sec{padding-top:62px}
+  .sec-h h2{font-size:29px}
+  .gal{gap:22px}
+  .tile .lbl{font-size:14px}
+}
+
+/* ============================================================
+   Accessibility / print
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}
+:focus-visible{outline:3px solid rgba(217,83,30,.5);outline-offset:2px;border-radius:6px}
+@media print{
+  .sticky,.ai-fab,.ai-panel,#installBtn,.topbar{display:none !important}
+  body{background:#fff}
+}
+
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+<button id="installBtn" onclick="installApp()">⤓ Install app</button>
+
+<!-- APP_CONFIG_SLOT (build-mobile.js inserts the app settings here) -->
+<script>
+/* ============================================================
+   art.js — generated henna artwork (SVG)
+   Used by the website and by the admin preview.
+   These drawings are the fallback whenever no photo is uploaded.
+   ============================================================ */
+(function (global) {
+  const HENNA = '#6E3216', HENNA2 = '#8A431F';
+  const TONES = [['#F3CFAA','#E4AF83'],['#F6D8B6','#EAB98F'],['#F7DFC4','#EFC9A4'],['#EFC49C','#DEA97C']];
+  let uid = 0;
+
+  function petalRing(cx,cy,n,r0,r1,w,fill,op,rot){
+    let s='';
+    for(let i=0;i<n;i++){
+      const a=(360/n)*i+(rot||0);
+      s+=`<path transform="rotate(${a} ${cx} ${cy})" d="M ${cx} ${cy-r0} Q ${cx-w} ${cy-(r0+r1)/2} ${cx} ${cy-r1} Q ${cx+w} ${cy-(r0+r1)/2} ${cx} ${cy-r0} Z" fill="${fill}" opacity="${op}"/>`;
+    }
+    return s;
+  }
+  function dotRing(cx,cy,n,r,rad,fill,op,rot){
+    let s='';
+    for(let i=0;i<n;i++){
+      const a=((360/n)*i+(rot||0))*Math.PI/180;
+      s+=`<circle cx="${(cx+r*Math.sin(a)).toFixed(1)}" cy="${(cy-r*Math.cos(a)).toFixed(1)}" r="${rad}" fill="${fill}" opacity="${op}"/>`;
+    }
+    return s;
+  }
+  function scallop(cx,cy,n,r,h,stroke,sw,rot){
+    let s='';
+    for(let i=0;i<n;i++){
+      const a=(360/n)*i+(rot||0);
+      s+=`<path transform="rotate(${a} ${cx} ${cy})" d="M ${cx-h} ${cy-r} Q ${cx} ${cy-r-h*1.3} ${cx+h} ${cy-r}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round"/>`;
+    }
+    return s;
+  }
+  function paisleyRing(cx,cy,n,r0,r1,stroke,sw,rot){
+    let s='';
+    for(let i=0;i<n;i++){
+      const a=(360/n)*i+(rot||0);
+      s+=`<g transform="rotate(${a} ${cx} ${cy})">
+        <path d="M ${cx} ${cy-r0} C ${cx+r1*0.55} ${cy-r0-2} ${cx+r1*0.45} ${cy-r1} ${cx} ${cy-r1} C ${cx-r1*0.3} ${cy-r1} ${cx-r1*0.28} ${cy-r0-4} ${cx} ${cy-r0} Z" fill="none" stroke="${stroke}" stroke-width="${sw}"/>
+        <circle cx="${cx}" cy="${cy-(r0+r1)/2}" r="${sw*1.1}" fill="${stroke}"/></g>`;
+    }
+    return s;
+  }
+  function mandala(cx,cy,R,seed){
+    const s=seed||0;
+    let g='';
+    g+=scallop(cx,cy,Math.round(18+s*2),R*0.98,R*0.09,HENNA,R*0.022,0);
+    g+=dotRing(cx,cy,Math.round(20+s*2),R*0.86,R*0.022,HENNA,.85,0);
+    g+=petalRing(cx,cy,Math.round(12+s),R*0.5,R*0.82,R*0.13,HENNA,.9,0);
+    g+=paisleyRing(cx,cy,Math.round(8+s),R*0.3,R*0.58,HENNA,R*0.02,180/(8+s));
+    g+=petalRing(cx,cy,8,R*0.12,R*0.34,R*0.09,HENNA2,.95,22);
+    g+=dotRing(cx,cy,10,R*0.42,R*0.016,HENNA,.7,18);
+    g+=`<circle cx="${cx}" cy="${cy}" r="${R*0.1}" fill="${HENNA}"/>`;
+    g+=`<circle cx="${cx}" cy="${cy}" r="${R*0.05}" fill="#F4D2AF"/>`;
+    return g;
+  }
+  function vine(x1,y1,x2,y2,amp,leaves,stroke,sw){
+    const mx=(x1+x2)/2, my=(y1+y2)/2;
+    let g=`<path d="M ${x1} ${y1} Q ${mx+amp} ${my} ${x2} ${y2}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round"/>`;
+    for(let i=1;i<=leaves;i++){
+      const t=i/(leaves+1);
+      const px=(1-t)*(1-t)*x1+2*(1-t)*t*(mx+amp)+t*t*x2;
+      const py=(1-t)*(1-t)*y1+2*(1-t)*t*my+t*t*y2;
+      const a=(i%2?45:-135);
+      g+=`<path transform="rotate(${a} ${px.toFixed(1)} ${py.toFixed(1)})" d="M ${px.toFixed(1)} ${py.toFixed(1)} q 5 -4 10 0 q -5 4 -10 0 Z" fill="${stroke}" opacity=".8"/>`;
+    }
+    return g;
+  }
+  function jaali(x,y,w,h,step,stroke,sw){
+    let g='<g opacity=".75">';
+    for(let i=-h;i<w+h;i+=step){
+      g+=`<path d="M ${x+i} ${y} L ${x+i+h} ${y+h}" stroke="${stroke}" stroke-width="${sw}"/>`;
+      g+=`<path d="M ${x+i} ${y+h} L ${x+i+h} ${y}" stroke="${stroke}" stroke-width="${sw}"/>`;
+    }
+    return g+'</g>';
+  }
+  function peacock(cx,cy,s){
+    let g='';
+    for(let i=-4;i<=4;i++){
+      const a=i*13;
+      g+=`<g transform="rotate(${a} ${cx} ${cy+s*0.9})">
+        <ellipse cx="${cx}" cy="${cy-s*0.35}" rx="${s*0.13}" ry="${s*0.5}" fill="none" stroke="${HENNA}" stroke-width="${s*0.05}"/>
+        <circle cx="${cx}" cy="${cy-s*0.6}" r="${s*0.075}" fill="${HENNA}"/></g>`;
+    }
+    g+=`<path d="M ${cx} ${cy+s*0.95} C ${cx-s*0.34} ${cy+s*0.55} ${cx-s*0.3} ${cy+s*0.05} ${cx-s*0.04} ${cy-s*0.05} C ${cx+s*0.16} ${cy+s*0.15} ${cx+s*0.2} ${cy+s*0.6} ${cx} ${cy+s*0.95} Z" fill="${HENNA}"/>`;
+    g+=`<circle cx="${cx-s*0.1}" cy="${cy-s*0.18}" r="${s*0.14}" fill="${HENNA}"/>`;
+    g+=`<path d="M ${cx-s*0.24} ${cy-s*0.2} l ${-s*0.18} ${s*0.06} l ${s*0.18} ${s*0.06}" fill="${HENNA2}"/>`;
+    g+=`<path d="M ${cx-s*0.1} ${cy-s*0.34} l ${-s*0.05} ${-s*0.16} M ${cx-s*0.04} ${cy-s*0.33} l ${s*0.02} ${-s*0.17}" stroke="${HENNA}" stroke-width="${s*0.035}" stroke-linecap="round"/>`;
+    return g;
+  }
+  function bust(cx,cy,s,type){
+    let g='';
+    g+=`<circle cx="${cx}" cy="${cy}" r="${s*0.26}" fill="${HENNA}"/>`;
+    g+=`<path d="M ${cx-s*0.62} ${cy+s*1.25} C ${cx-s*0.58} ${cy+s*0.42} ${cx+s*0.58} ${cy+s*0.42} ${cx+s*0.62} ${cy+s*1.25} Z" fill="${HENNA}"/>`;
+    if(type==='groom'){
+      g+=`<path d="M ${cx-s*0.42} ${cy-s*0.18} a ${s*0.42} ${s*0.42} 0 0 1 ${s*0.84} 0 z" fill="${HENNA2}"/>`;
+      g+=`<path d="M ${cx-s*0.42} ${cy-s*0.16} h ${s*0.84}" stroke="${HENNA}" stroke-width="${s*0.09}"/>`;
+      g+=`<path d="M ${cx+s*0.3} ${cy-s*0.42} l ${s*0.22} ${-s*0.2}" stroke="${HENNA}" stroke-width="${s*0.07}" stroke-linecap="round"/>`;
+    }else{
+      g+=`<path d="M ${cx-s*0.42} ${cy-s*0.1} C ${cx-s*0.5} ${cy+s*0.85} ${cx+s*0.5} ${cy+s*0.85} ${cx+s*0.42} ${cy-s*0.1}" fill="none" stroke="${HENNA}" stroke-width="${s*0.09}"/>`;
+      for(let i=0;i<7;i++){
+        const t=i/6, xx=cx-s*0.46+t*s*0.92;
+        g+=`<circle cx="${xx.toFixed(1)}" cy="${(cy+s*0.86).toFixed(1)}" r="${s*0.05}" fill="${HENNA}"/>`;
+      }
+      g+=`<path d="M ${cx} ${cy-s*0.28} l ${-s*0.14} ${-s*0.2} l ${s*0.28} 0 z" fill="${HENNA2}"/>`;
+    }
+    return g;
+  }
+  function doli(cx,cy,s){
+    let g='';
+    g+=`<path d="M ${cx-s*0.95} ${cy-s*0.34} h ${s*1.9}" stroke="${HENNA}" stroke-width="${s*0.09}" stroke-linecap="round"/>`;
+    g+=`<path d="M ${cx-s*0.62} ${cy-s*0.34} C ${cx-s*0.5} ${cy-s*0.85} ${cx+s*0.5} ${cy-s*0.85} ${cx+s*0.62} ${cy-s*0.34} Z" fill="${HENNA2}"/>`;
+    g+=`<rect x="${cx-s*0.58}" y="${cy-s*0.3}" width="${s*1.16}" height="${s*0.72}" rx="${s*0.08}" fill="none" stroke="${HENNA}" stroke-width="${s*0.07}"/>`;
+    g+=jaali(cx-s*0.54,cy-s*0.26,s*1.08,s*0.64,s*0.16,HENNA,s*0.028);
+    for(let i=0;i<9;i++){
+      g+=`<circle cx="${(cx-s*0.58+i*s*0.145).toFixed(1)}" cy="${(cy+s*0.5).toFixed(1)}" r="${s*0.045}" fill="${HENNA}"/>`;
+    }
+    g+=bust(cx-s*1.18,cy-s*0.2,s*0.3,'groom');
+    g+=bust(cx+s*1.18,cy-s*0.2,s*0.3,'groom');
+    return g;
+  }
+  function dancer(cx,cy,s){
+    let g='';
+    g+=`<circle cx="${cx}" cy="${cy-s*0.72}" r="${s*0.19}" fill="${HENNA}"/>`;
+    g+=`<path d="M ${cx} ${cy-s*0.52} L ${cx} ${cy+s*0.05}" stroke="${HENNA}" stroke-width="${s*0.11}" stroke-linecap="round"/>`;
+    g+=`<path d="M ${cx-s*0.62} ${cy+s*0.95} C ${cx-s*0.4} ${cy-s*0.05} ${cx+s*0.4} ${cy-s*0.05} ${cx+s*0.62} ${cy+s*0.95} Z" fill="${HENNA}"/>`;
+    g+=`<path d="M ${cx-s*0.62} ${cy+s*0.95} q ${s*0.31} ${s*0.18} ${s*0.62} 0 q ${s*0.31} ${-s*0.18} ${s*0.62} 0" fill="none" stroke="#F3CFAA" stroke-width="${s*0.07}"/>`;
+    g+=`<path d="M ${cx-s*0.04} ${cy-s*0.36} L ${cx-s*0.55} ${cy-s*0.62}" stroke="${HENNA}" stroke-width="${s*0.08}" stroke-linecap="round"/>`;
+    g+=`<path d="M ${cx+s*0.04} ${cy-s*0.36} L ${cx+s*0.52} ${cy-s*0.72}" stroke="${HENNA}" stroke-width="${s*0.08}" stroke-linecap="round"/>`;
+    g+=`<circle cx="${cx-s*0.6}" cy="${cy-s*0.66}" r="${s*0.07}" fill="${HENNA2}"/>`;
+    g+=`<circle cx="${cx+s*0.57}" cy="${cy-s*0.76}" r="${s*0.07}" fill="${HENNA2}"/>`;
+    return g;
+  }
+  function arabicVine(w,h,dense){
+    let g='';
+    const n=dense||3;
+    for(let k=0;k<n;k++){
+      const y0=h*(0.15+0.3*k), sw=2.2-k*0.3;
+      g+=`<path d="M ${-w*0.05} ${y0} C ${w*0.28} ${y0-h*0.22} ${w*0.55} ${y0+h*0.26} ${w*1.05} ${y0-h*0.06}" fill="none" stroke="${HENNA}" stroke-width="${sw}" stroke-linecap="round"/>`;
+      for(let i=0;i<6;i++){
+        const x=w*(0.08+i*0.17), y=y0+((i%2)?-h*0.09:h*0.09);
+        g+=petalRing(x,y,5,h*0.02,h*0.11,h*0.035,HENNA,.9,i*14);
+        g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${h*0.018}" fill="${HENNA2}"/>`;
+      }
+    }
+    return g;
+  }
+
+  /* ---- henna hand (used in the banner) ---- */
+  function handSVG(variant, tone){
+    const id='h'+(uid++);
+    const t=TONES[(tone||0)%TONES.length];
+    const flip = (variant%2) ? ' transform="translate(200,0) scale(-1,1)"' : '';
+    const shapes = `
+      <rect x="42" y="92" width="104" height="112" rx="40"/>
+      <rect x="47" y="30" width="23" height="90" rx="11.5"/>
+      <rect x="74" y="16" width="24" height="104" rx="12"/>
+      <rect x="102" y="26" width="23" height="96" rx="11.5"/>
+      <rect x="128" y="52" width="21" height="72" rx="10.5"/>
+      <rect x="14" y="128" width="25" height="80" rx="12.5" transform="rotate(18 40 140)"/>
+      <rect x="62" y="188" width="66" height="64" rx="16"/>`;
+    const tips = `
+      <rect x="47" y="30" width="23" height="27" rx="11.5" fill="${HENNA}"/>
+      <rect x="74" y="16" width="24" height="29" rx="12" fill="${HENNA}"/>
+      <rect x="102" y="26" width="23" height="27" rx="11.5" fill="${HENNA}"/>
+      <rect x="128" y="52" width="21" height="25" rx="10.5" fill="${HENNA}"/>
+      <rect x="14" y="128" width="25" height="26" rx="12.5" transform="rotate(18 40 140)" fill="${HENNA}"/>`;
+    const bands = [[47,23,66],[47,23,80],[74,24,58],[74,24,72],[102,23,64],[102,23,78],[128,21,86]]
+      .map(b=>`<rect x="${b[0]}" y="${b[2]}" width="${b[1]}" height="5" rx="2.5" fill="${HENNA}" opacity=".9"/>`).join('')
+      + [[47,23,73],[74,24,65],[102,23,71]]
+      .map(b=>`<rect x="${b[0]}" y="${b[2]}" width="${b[1]}" height="2.4" rx="1.2" fill="${HENNA2}" opacity=".8"/>`).join('');
+    let inner;
+    if(variant===2){
+      inner = arabicVine(200,180,2) + mandala(94,150,34,1);
+    }else if(variant===3){
+      inner = mandala(94,146,40,3) + peacock(94,196,26);
+    }else{
+      inner = mandala(94,148,44,variant+1)
+            + vine(56,206,94,196,-14,3,HENNA,1.6)
+            + vine(132,206,96,198,14,3,HENNA,1.6)
+            + dotRing(94,148,14,60,1.8,HENNA,.6,10);
+    }
+    return `<svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="sk${id}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="${t[0]}"/><stop offset="100%" stop-color="${t[1]}"/>
+        </linearGradient>
+        <clipPath id="cp${id}">${shapes}</clipPath>
+      </defs>
+      <g${flip}>
+        <g fill="url(#sk${id})" stroke="#D8A87C" stroke-width="1.2">${shapes}</g>
+        <g clip-path="url(#cp${id})">
+          ${inner}${tips}${bands}
+          <rect x="60" y="214" width="72" height="7" rx="3.5" fill="${HENNA}" opacity=".9"/>
+          <rect x="60" y="226" width="72" height="3" rx="1.5" fill="${HENNA2}" opacity=".8"/>
+          ${dotRing(96,240,7,26,2,HENNA,.7,0)}
+        </g>
+      </g>
+    </svg>`;
+  }
+
+  function handCrop(variant, tone, vb){
+    return handSVG(variant,tone)
+      .replace('viewBox="0 0 200 260"','viewBox="'+(vb||'34 90 132 110')+'"')
+      .replace('preserveAspectRatio="xMidYMid meet"','preserveAspectRatio="xMidYMid slice"');
+  }
+
+  /* ---- design tile artwork ---- */
+  function artSVG(d, w, h){
+    const t=TONES[(d.tone||0)%TONES.length], id='a'+(uid++);
+    const W=w||100, H=h||100, cx=W/2, cy=H/2, R=Math.min(W,H)*0.42;
+    let body='';
+    switch(d.kind){
+      case 'jaali':
+        body = jaali(0,0,W,H,H*0.12,HENNA,1.1) + mandala(cx,cy,R*0.72,1) + scallop(cx,cy,16,R*1.05,R*0.08,HENNA,1.4,0);
+        break;
+      case 'peacock':
+        body = peacock(cx,cy*0.92,R*0.95) + dotRing(cx,cy,18,R*1.1,1.4,HENNA,.55,0); break;
+      case 'couple':
+        body = bust(cx-R*0.5,cy-R*0.22,R*0.5,'groom') + bust(cx+R*0.5,cy-R*0.22,R*0.5,'bride')
+             + scallop(cx,cy,15,R*1.08,R*0.09,HENNA,1.4,0) + vine(W*0.08,H*0.9,W*0.92,H*0.9,0,5,HENNA,1.4); break;
+      case 'doli':
+        body = doli(cx,cy*0.98,R*0.62) + dotRing(cx,cy,16,R*1.12,1.3,HENNA,.5,0); break;
+      case 'dancer':
+        body = dancer(cx-R*0.52,cy,R*0.62) + dancer(cx+R*0.52,cy,R*0.62)
+             + scallop(cx,cy,14,R*1.1,R*0.08,HENNA,1.3,10); break;
+      case 'arabic':
+        body = arabicVine(W,H,2) + petalRing(cx,cy*1.25,7,R*0.1,R*0.42,R*0.12,HENNA,.9,0); break;
+      case 'arabic2':
+        body = arabicVine(W,H,3); break;
+      default:
+        body = mandala(cx,cy,R,d.seed||0) + ((d.seed||0)>1?dotRing(cx,cy,24,R*1.12,1.3,HENNA,.5,0):'');
+    }
+    return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="sk${id}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${t[0]}"/><stop offset="100%" stop-color="${t[1]}"/></linearGradient></defs>
+      <rect width="${W}" height="${H}" fill="url(#sk${id})"/>${body}</svg>`;
+  }
+
+  const KINDS = [
+    {v:'mandala', n:'Mandala / floral'},
+    {v:'jaali',   n:'Jaali net'},
+    {v:'peacock', n:'Peacock'},
+    {v:'couple',  n:'Bride & groom'},
+    {v:'doli',    n:'Doli / palanquin'},
+    {v:'dancer',  n:'Dancing figures'},
+    {v:'arabic',  n:'Arabic vine'},
+    {v:'arabic2', n:'Arabic dense'}
+  ];
+
+  global.ART = { artSVG, handSVG, handCrop, mandala, KINDS, TONES };
+})(window);
+
+</script>
+<script>window.__INLINE_CONTENT__ = {
+  "business": {
+    "name": "Samiksha",
+    "brandSuffix": "Mehendi Art",
+    "logo": {
+      "image": "/uploads/samiksha-logo.png",
+      "height": 46,
+      "width": 0
+    },
+    "tagline1": "Beautiful designs.",
+    "tagline2": "Happy moments.",
+    "whatsapp": "8830392310",
+    "whatsappGreeting": "Hi Samiksha! I'd like to book a mehendi appointment.",
+    "rating": "4.7",
+    "bookingsCount": "500+",
+    "address": "Andheri West, Mumbai",
+    "hours": "Mon–Sun, 9 AM – 8 PM",
+    "serviceArea": "Travels across Mumbai & Thane",
+    "ctaPrimary": "Book Your Appointment",
+    "ctaSecondary": "or fill the booking form ↓",
+    "ctaSticky": "Book Now"
+  },
+  "stats": [
+    {
+      "value": "7 Years",
+      "label": "Experience"
+    },
+    {
+      "value": "500+",
+      "label": "My Happy Client's"
+    },
+    {
+      "value": "100%",
+      "label": "Natural henna"
+    }
+  ],
+  "banner": {
+    "tag": "Bridal · full hands",
+    "collage": [
+      {
+        "image": "/uploads/main-banner-sm-1789161049185.jpg",
+        "variant": 1,
+        "tone": 0
+      }
+    ]
+  },
+  "sections": [
+    {
+      "key": "designer",
+      "title": "Designer Mehandi",
+      "subtitle": "Signature bridal & contemporary work",
+      "items": [
+        {
+          "id": "d_bridal",
+          "label": "Full Bridal",
+          "image": "/uploads/new-project-1--1789156279226.jpg",
+          "kind": "mandala",
+          "seed": 3,
+          "tone": 0,
+          "time": "4–6 hrs",
+          "cover": "Hands + feet",
+          "from": 4999,
+          "blurb": "Full-coverage bridal work — jaali nets, layered mandalas, and the groom's initials hidden inside the pattern."
+        },
+        {
+          "id": "d_indo",
+          "label": "Indo-Western",
+          "image": "/uploads/new-project-1789156290842.jpg",
+          "kind": "peacock",
+          "seed": 1,
+          "tone": 1,
+          "time": "2–3 hrs",
+          "cover": "Both hands",
+          "from": 1999,
+          "blurb": "Modern geometry paired with traditional motifs. Clean lines, lots of breathing room, very photogenic on reels."
+        },
+        {
+          "id": "d_mandala",
+          "label": "Mandala Art",
+          "image": "/uploads/new-project-2--1789156765733.jpg",
+          "kind": "mandala",
+          "seed": 2,
+          "tone": 2,
+          "time": "1–2 hrs",
+          "cover": "Back of hand",
+          "from": 499,
+          "blurb": "One bold centred mandala with radiating petals and dot work. The most requested single-motif design."
+        },
+        {
+          "id": "d_jaali",
+          "label": "Jaali Net",
+          "image": "/uploads/new-project-3--1789157188558.jpg",
+          "kind": "jaali",
+          "seed": 0,
+          "tone": 3,
+          "time": "2–4 hrs",
+          "cover": "Hands + wrists",
+          "from": 2299,
+          "blurb": "Fine lattice net-work inspired by Mughal screens, filled with tiny florals. Slow, detailed, and stunning up close."
+        }
+      ]
+    },
+    {
+      "key": "figures",
+      "title": "Figures Mehandi",
+      "subtitle": "Dulha–dulhan, doli, peacocks & storytelling motifs",
+      "items": [
+        {
+          "id": "f_couple",
+          "label": "Dulha–Dulhan",
+          "image": "/uploads/new-project-4--1789157784243.jpg",
+          "kind": "couple",
+          "seed": 2,
+          "tone": 0,
+          "time": "3–5 hrs",
+          "cover": "Both palms",
+          "from": 2799,
+          "blurb": "The bride and groom drawn face to face across both palms, framed by a shehnai border and floral arches."
+        },
+        {
+          "id": "f_peacock",
+          "label": "Peacock",
+          "image": "/uploads/new-project-5--1789158262763.jpg",
+          "kind": "peacock",
+          "seed": 1,
+          "tone": 1,
+          "time": "1.5–2 hrs",
+          "cover": "One hand",
+          "from": 1699,
+          "blurb": "A full peacock with a spread tail flowing from the wrist to the fingers — the classic figure motif."
+        },
+        {
+          "id": "f_doli",
+          "label": "Doli & Baraat",
+          "image": "/uploads/new-project-6--1789158611042.jpg",
+          "kind": "doli",
+          "seed": 3,
+          "tone": 2,
+          "time": "4–6 hrs",
+          "cover": "Forearms",
+          "from": 3299,
+          "blurb": "The whole wedding procession — palanquin, dholak, baraatis — told as a scene running up the forearm."
+        },
+        {
+          "id": "f_dance",
+          "label": "Dancing Ladies",
+          "image": "/uploads/new-project-7--1789158868545.jpg",
+          "kind": "dancer",
+          "seed": 0,
+          "tone": 3,
+          "time": "2–3 hrs",
+          "cover": "Both hands",
+          "from": 1899,
+          "blurb": "Rajasthani ghoomar dancers in a ring, skirts fanning out, with mirror-dot detailing between them."
+        }
+      ]
+    },
+    {
+      "key": "arabic",
+      "title": "Arabic Mehandi",
+      "subtitle": "Bold flowing florals with open, airy spacing",
+      "items": [
+        {
+          "id": "a_floral",
+          "label": "Floral Vines",
+          "image": "/uploads/new-project-8--1789159466722.jpg",
+          "kind": "arabic",
+          "seed": 1,
+          "tone": 1,
+          "time": "45–60 min",
+          "cover": "One hand",
+          "from": 1199,
+          "blurb": "A single diagonal vine of roses and leaves sweeping from wrist to index finger. Fast, bold, always flattering."
+        },
+        {
+          "id": "a_bold",
+          "label": "Bold Leafy",
+          "image": "/uploads/new-project-9--1789159754267.jpg",
+          "kind": "arabic2",
+          "seed": 2,
+          "tone": 0,
+          "time": "60–90 min",
+          "cover": "Both hands",
+          "from": 1499,
+          "blurb": "Thick strokes, heavy shading, and large leaf clusters. Reads beautifully from a distance in photos."
+        },
+        {
+          "id": "a_gulf",
+          "label": "Gulf Style",
+          "image": "/uploads/new-project-10--1789160039166.jpg",
+          "kind": "arabic",
+          "seed": 3,
+          "tone": 3,
+          "time": "1–2 hrs",
+          "cover": "Hands + wrists",
+          "from": 1799,
+          "blurb": "Khaleeji-inspired outlines with glitter-free shading and long trailing tendrils down the fingers."
+        },
+        {
+          "id": "a_min",
+          "label": "Minimal Arabic",
+          "image": "/uploads/new-project-11--1789160374934.jpg",
+          "kind": "arabic2",
+          "seed": 0,
+          "tone": 2,
+          "time": "20–35 min",
+          "cover": "Back of hand",
+          "from": 899,
+          "blurb": "A slim floral trail on one or two fingers only. Perfect for office days, small pujas and last-minute plans."
+        }
+      ]
+    }
+  ],
+  "pricing": {
+    "title": "Pricing Packages",
+    "subtitle": "Per person · bridal includes a free trial",
+    "note": "Group and festival bookings get a per-person discount.",
+    "packages": [
+      {
+        "name": "Basic",
+        "price": 999,
+        "desc": "Simple & elegant<br>One hand, back side",
+        "badge": ""
+      },
+      {
+        "name": "Bridal",
+        "price": 2999,
+        "desc": "Intricate & traditional<br>Full hands + feet",
+        "badge": "MOST BOOKED"
+      },
+      {
+        "name": "Premium",
+        "price": 4999,
+        "desc": "Full hand & more<br>Bridal + 4 guests",
+        "badge": ""
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What My Customers Say's",
+    "subtitle": "4.9 average from 480 bookings",
+    "items": [
+      {
+        "name": "Ananya R.",
+        "meta": "Wedding, Jan 2026",
+        "text": "Samiksha did my bridal mehendi at 5 AM without a single complaint. The stain came out almost black by the next morning. Guests kept asking for her number."
+      },
+      {
+        "name": "Fatima S.",
+        "meta": "Eid, Mar 2026",
+        "text": "Booked her for eight of us at home. Fast, spotless, and she brought her own stool and light. Worth every rupee."
+      },
+      {
+        "name": "Divya M.",
+        "meta": "Karwa Chauth, Oct 2025",
+        "text": "I wanted something minimal for work the next day and she got it exactly right. Very good at reading what you actually want."
+      },
+      {
+        "name": "Sneha K.",
+        "meta": "Engagement, Feb 2026",
+        "text": "The dulha-dulhan figures on my palms were unbelievable. Everyone at the sangeet wanted photos of my hands."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book Your Date Today",
+    "subtitle": "Usually confirmed within 2 hours",
+    "submitLabel": "Request Booking",
+    "occasions": [
+      "Wedding",
+      "Engagement",
+      "Festival",
+      "Baby shower",
+      "Other"
+    ],
+    "locations": [
+      "At my home",
+      "At the studio",
+      "Event venue"
+    ],
+    "designPlaceholder": "Let Samiksha suggest"
+  },
+  "assistant": {
+    "headerTitle": "AI Assistant",
+    "headerSubtitle": "Ask about designs, prices, dates",
+    "greeting": "Hi! I'm Samiksha's assistant ✦\nAsk me about designs, prices, timings or aftercare — or tap a question below.",
+    "quick": [
+      "What does bridal cost?",
+      "Show me figures mehandi",
+      "How long does it last?",
+      "Do you come to my home?"
+    ],
+    "fallback": "I can help with our three catalogues — Designer, Figures and Arabic Mehandi — plus pricing, aftercare, travel, or booking a date. Which would you like?",
+    "rules": [
+      {
+        "k": "price|cost|rate|charge|how much|package|budget",
+        "r": "Three packages: Basic Rs 999 (one hand, simple), Bridal Rs 2999 (full hands + feet, includes a free trial), and Premium Rs 4999 (bride + 4 guests). Individual designs start from Rs 899 — tap Book Now for an exact quote."
+      },
+      {
+        "k": "figure|dulha|dulhan|couple|doli|baraat|peacock|dancing",
+        "r": "Figures Mehandi is Samiksha's speciality — Dulha–Dulhan portraits, peacocks, the doli and baraat scene, and ghoomar dancers. These run Rs 1699 to Rs 3299 depending on coverage."
+      },
+      {
+        "k": "designer|jaali|mandala|indo|western",
+        "r": "Designer Mehandi covers Full Bridal (Rs 2999), Indo-Western (Rs 1999), Mandala Art (Rs 1299) and Jaali Net (Rs 2299). Tap any tile in that section to see the details."
+      },
+      {
+        "k": "arabic|arebic|gulf|khaleeji|floral",
+        "r": "Arabic Mehandi is bold flowing florals with open spacing — Floral Vines from Rs 1199, Bold Leafy Rs 1499, Gulf Style Rs 1799, and Minimal Arabic from Rs 899. Most take under 90 minutes."
+      },
+      {
+        "k": "bridal|wedding|shaadi",
+        "r": "Bridal is Rs 2999 for full hands and feet, 4–6 hours, with a free trial session beforehand. In wedding season (Nov–Feb) dates go 2–3 months ahead, so book early."
+      },
+      {
+        "k": "experience|years|qualified",
+        "r": "Samiksha has 7 years of experience and has done mehendi for over 500 brides, with a 4.9 rating across 480 bookings."
+      },
+      {
+        "k": "dark|stain|colour|color|last|fade|aftercare",
+        "r": "Keep the paste on 6–8 hours, then scrape it off instead of washing. Avoid water for 12 hours and dab on mustard oil. The colour darkens over 48 hours and lasts 7–10 days."
+      },
+      {
+        "k": "chemical|ppd|safe|allerg|natural|black henna",
+        "r": "100% natural henna — no PPD or black henna, which can burn skin. Safe for kids and pregnancy. Do mention any allergies in your booking note."
+      },
+      {
+        "k": "travel|home|come|venue|location|area|andheri|thane|mumbai",
+        "r": "Samiksha is based in Andheri West and travels across Mumbai and Thane. Travel is free within 10 km, Rs 300 beyond that. Home, venue, or studio all work."
+      },
+      {
+        "k": "time|hour|open|when|slot|morning|early",
+        "r": "Hours are 9 AM to 8 PM, all seven days. Early-morning bridal slots (even 5 AM) can be arranged — just mention the time when you book."
+      },
+      {
+        "k": "book|appointment|reserve|available|date|whatsapp|number|contact",
+        "r": "Tap Book Now, or message 88303 92310 directly on WhatsApp. A 30% deposit holds the date, refundable up to 7 days before."
+      },
+      {
+        "k": "cancel|refund|deposit|advance",
+        "r": "The deposit is 30% of the package, fully refundable if you cancel more than 7 days before your date."
+      },
+      {
+        "k": "group|friends|family|bulk|how many people",
+        "r": "Group bookings are very common. Premium (Rs 4999) covers the bride plus 4 guests, and larger groups get a per-person discount."
+      },
+      {
+        "k": "^(hi|hello|hey|namaste|salaam)",
+        "r": "Namaste! I can help with designs, pricing, timings or aftercare. What are you planning for?"
+      },
+      {
+        "k": "thank|thanks|great|nice",
+        "r": "Happy to help! Tap Book Now whenever you're ready and Samiksha will take it from there."
+      }
+    ]
+  },
+  "footer": {
+    "text": "© {year} Samiksha Mehandi Arts"
+  }
+};</script>
+<script>
+/* ============================================================
+   The whole page is drawn from data/content.json.
+   Edit it at  /admin  — nothing here needs to be touched.
+   ============================================================ */
+
+let C = null;
+
+/* declared up here because render() uses them */
+let favs = new Set();
+try { favs = new Set(JSON.parse(localStorage.getItem('sm_favs') || '[]')); } catch (e) {}
+const state = { pkg: '', occasion: '' };
+
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const rupee = n => '₹' + Number(n || 0).toLocaleString('en-IN');
+const WA = () => 'https://wa.me/' + String((C.business.whatsapp || '')).replace(/\D/g, '');
+const waLink = msg => WA() + '?text=' + encodeURIComponent(msg);
+
+/* picture = uploaded image if present, otherwise generated artwork */
+function pic(obj, svg) {
+  return obj && obj.image ? `<img src="${esc(obj.image)}" alt="${esc(obj.label || '')}" loading="lazy">` : svg;
+}
+
+/* the header: an uploaded logo if there is one, otherwise the name as text */
+function logoTag(b) {
+  const L = b.logo || {};
+  if (!L.image) return `${esc(b.name)}'s <em>${esc(b.brandSuffix)}</em>`;
+  const h = Number(L.height) > 0 ? Number(L.height) : 46;
+  const w = Number(L.width)  > 0 ? Number(L.width)  : 0;
+  const size = `height:${h}px;` + (w ? `width:${w}px;` : 'width:auto;');
+  return `<img class="brandlogo" src="${esc(L.image)}" style="${size}"
+            alt="${esc(b.name)}'s ${esc(b.brandSuffix)}">`;
+}
+
+/* ---------------- boot ---------------- */
+(async function boot() {
+  // used by the single-file preview build
+  if (window.__INLINE_CONTENT__) { C = window.__INLINE_CONTENT__; render(); return; }
+
+  /* Tries each source in turn:
+     1. the live site's API, if this is the phone app (set in app-config.js)
+     2. the API on the same origin (normal website)
+     3. a bundled copy (phone app offline, or a plain static host) */
+  const sources = [];
+  if (window.__API_BASE__) sources.push(window.__API_BASE__.replace(/\/$/, '') + '/api/content');
+  sources.push('/api/content', 'content.json', 'data/content.json');
+
+  for (const url of sources) {
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      if (!r.ok) continue;
+      C = await r.json();
+      if (C && C.business) break;
+      C = null;
+    } catch (e) { /* try the next one */ }
+  }
+
+  if (!C) {
+    document.getElementById('root').innerHTML = `
+      <div class="loadfail">
+        <h2>The content could not be loaded</h2>
+        <p>This page needs the little server to be running. Open a Terminal in the
+        project folder and run:</p>
+        <p><code>node server.js</code></p>
+        <p>Then visit <code>http://localhost:4321</code>.</p>
+      </div>`;
+    return;
+  }
+  render();
+})();
+
+/* ---------------- render ---------------- */
+function render() {
+  const b = C.business;
+  document.title = `${b.name}'s ${b.brandSuffix}`;
+
+  const sprig = side => {
+    const flip = side === 'r' ? 'scale(-1,1) translate(-44,0)' : '';
+    return `<svg width="44" height="16" viewBox="0 0 44 16"><g transform="${flip}">
+      <path d="M4 8h22" stroke="#D9531E" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M26 8c4-6 13-6 15 0-2 6-11 6-15 0z" fill="#D9531E"/>
+      <path d="M20 8c3-4 8-4 10 0-2 4-7 4-10 0z" fill="#E68A55"/>
+      <circle cx="2" cy="8" r="1.8" fill="#D9531E"/></g></svg>`;
+  };
+  const head = (title, sub) => `
+    <div class="sec-h">${sprig('l')}<h2>${esc(title)}</h2>${sprig('r')}</div>
+    ${sub ? `<p class="sec-sub">${esc(sub)}</p>` : ''}`;
+
+  const collage = (C.banner.collage || []).slice(0, 2);
+
+  document.getElementById('root').innerHTML = `
+  <div class="app">
+    <div class="topbar" id="topbar">
+      <div class="brand">${logoTag(b)}</div>
+      <nav class="navlinks">
+        ${(C.sections || []).map((s, i) => `<a href="#sec${i}">${esc(s.title.replace(/\s*Mehandi\s*/i, '') || s.title)}</a>`).join('')}
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <div class="rate">★ ${esc(b.rating)} · ${esc(b.bookingsCount)} bookings</div>
+      <a class="navcta" href="${waLink(b.whatsappGreeting)}" target="_blank" rel="noopener">${esc(b.ctaSticky)}</a>
+    </div>
+
+    <section class="banner">
+      <div class="hero-grid">
+        <div>
+          <h1 class="title">
+            <span class="l1 script">${esc(b.name)}</span>
+            <span class="l2">${esc(b.brandSuffix)}</span>
+          </h1>
+          <p class="tag">${esc(b.tagline1)}<br>${esc(b.tagline2)}</p>
+          <div class="divider">
+            <svg width="146" height="12" viewBox="0 0 146 12" fill="none">
+              <path d="M2 6h116" stroke="#D9531E" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 6c3-4 9-4 11 0-2 4-8 4-11 0z" fill="#D9531E"/>
+              <path d="M13 6c4-5 12-5 15 0-3 5-11 5-15 0z" fill="#B8410F" opacity=".55"/>
+              <circle cx="126" cy="6" r="2.6" fill="#D9531E"/>
+              <circle cx="136" cy="6" r="1.6" fill="#D9531E" opacity=".6"/>
+              <circle cx="143" cy="6" r="1" fill="#D9531E" opacity=".4"/>
+            </svg>
+          </div>
+          <a class="cta" href="${waLink(b.whatsappGreeting)}" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            ${esc(b.ctaPrimary)}
+          </a>
+          <button class="altlink" onclick="goBook()">${esc(b.ctaSecondary)}</button>
+        </div>
+        <div class="collage ${collage.length === 1 ? 'solo' : 'stacked'}">
+          ${collage.map((c, i) => `<div class="pcardimg p${i}">${pic(c, ART.handSVG(c.variant|0, c.tone|0))}</div>`).join('')}
+          ${C.banner.tag ? `<span class="imgtag">${esc(C.banner.tag)}</span>` : ''}
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      ${(C.stats || []).map(s => `<div><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('')}
+    </div>
+
+    ${(C.sections || []).map((sec, si) => `
+      <section class="sec" id="sec${si}">
+        ${head(sec.title, sec.subtitle)}
+        <div class="gal">
+          ${(sec.items || []).map(d => `
+            <button class="tile" onclick="openDesign('${esc(d.id)}')">
+              <div class="thumb">${pic(d, ART.artSVG(d, 100, 100))}${favs.has(d.id) ? '<span class="fav">♥</span>' : ''}</div>
+              <div class="lbl">${esc(d.label)}</div>
+            </button>`).join('')}
+        </div>
+      </section>`).join('')}
+
+    <section class="sec" id="pricing">
+      ${head(C.pricing.title, C.pricing.subtitle)}
+      <div class="price" id="price"></div>
+      ${C.pricing.note ? `<p class="pnote">${esc(C.pricing.note)}</p>` : ''}
+    </section>
+
+    <section class="sec secflush" id="reviews">
+      <div class="secflush-h">${head(C.testimonials.title, C.testimonials.subtitle)}</div>
+      <div class="revs">
+        ${(C.testimonials.items || []).map(r => `
+          <div class="rev">
+            <div class="st">★★★★★</div>
+            <p>${esc(r.text)}</p>
+            <div class="who"><div class="av">${esc((r.name || '?')[0])}</div><span>${esc(r.name)} · ${esc(r.meta)}</span></div>
+          </div>`).join('')}
+      </div>
+    </section>
+
+    <section class="sec" id="book">
+      ${head(C.booking.title, C.booking.subtitle)}
+      <div class="form" id="formWrap">
+        <div class="fgrid">
+          <div class="field full"><label>Your name</label>
+            <input id="f_name" type="text" autocomplete="name" placeholder="e.g. Priya Sharma"></div>
+          <div class="field"><label>Phone</label>
+            <input id="f_phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile"></div>
+          <div class="field"><label>Event date</label><input id="f_date" type="date"></div>
+          <div class="err full" id="f_err"></div>
+          <div class="field"><label>Mehandi style</label>
+            <select id="f_style" onchange="onStyleChange()">
+              ${(C.sections || []).map(s => `<option value="${esc(s.title)}">${esc(s.title)}</option>`).join('')}
+            </select>
+          </div>
+          <div class="field"><label>Design <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+            <select id="f_design"></select></div>
+          <div class="field full"><label>Occasion</label><div class="chips" id="occ"></div></div>
+          <div class="field full"><label>Package</label><div class="chips" id="pkgChips"></div></div>
+          <div class="field"><label>Number of people</label>
+            <input id="f_ppl" type="number" min="1" max="50" value="1"></div>
+          <div class="field"><label>Location</label>
+            <select id="f_loc">${(C.booking.locations || []).map(l => `<option>${esc(l)}</option>`).join('')}</select></div>
+          <div class="field full"><label>Anything else? <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+            <textarea id="f_note" rows="2" placeholder="Design references, timings, allergies…"></textarea></div>
+        </div>
+        <button class="submit" onclick="submitBooking()">${esc(C.booking.submitLabel || 'Request Booking')}</button>
+      </div>
+    </section>
+
+    <div class="foot">
+      ${esc((C.footer.text || '© {year} {name}').replace(/\{year\}/g, new Date().getFullYear())
+                                                .replace(/\{name\}/g, b.name + "'s " + b.brandSuffix))}
+    </div>
+  </div>
+
+  <div class="sticky">
+    <a href="${waLink(b.whatsappGreeting)}" target="_blank" rel="noopener">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6a11 11 0 01-4.2-3.8c-.4-.6-.9-1.4-.9-2.3 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.4c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.5l-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.1 2.1 1.3.2.1.4 0 .5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.2.1.6-.1 1.1z"/></svg>
+      ${esc(b.ctaSticky)}
+    </a>
+  </div>
+
+  <div class="scrim" id="scrim" onclick="closeSheet()"></div>
+  <div class="sheet" id="sheet"></div>
+
+  <button class="ai-fab" onclick="toggleAI()" aria-label="AI assistant">
+    <span class="dot"></span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l1.4 3.6L17 8l-3.6 1.4L12 13l-1.4-3.6L7 8l3.6-1.4L12 3z"/>
+      <path d="M18.5 14l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z"/>
+      <path d="M6 15l.6 1.5L8 17l-1.4.5L6 19l-.6-1.5L4 17l1.4-.5L6 15z"/>
+    </svg>
+  </button>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-head">
+      <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:15px">✦</div>
+      <div class="t"><b>${esc(C.assistant.headerTitle)}</b><small>${esc(C.assistant.headerSubtitle)}</small></div>
+      <button onclick="toggleAI()">×</button>
+    </div>
+    <div class="ai-body" id="aiBody"></div>
+    <div class="qr" id="aiQr"></div>
+    <div class="ai-foot">
+      <input id="aiIn" placeholder="Type your question…" onkeydown="if(event.key==='Enter')send()">
+      <button onclick="send()" aria-label="Send">➤</button>
+    </div>
+  </div>`;
+
+  state.pkg = (C.pricing.packages[1] || C.pricing.packages[0]).name;
+  state.occasion = C.booking.occasions[0];
+  renderPrice(); renderChips(); onStyleChange();
+
+  const d = new Date(Date.now() + 14 * 864e5);
+  const dt = document.getElementById('f_date');
+  dt.min = new Date().toISOString().slice(0, 10);
+  dt.value = d.toISOString().slice(0, 10);
+
+  addEventListener('scroll', () => {
+    const t = document.getElementById('topbar');
+    if (t) t.classList.toggle('stuck', scrollY > 12);
+  });
+}
+
+/* ---------------- favourites ---------------- */
+function allDesigns() { return (C.sections || []).flatMap(s => s.items || []); }
+
+function openDesign(id) {
+  const d = allDesigns().find(x => x.id === id);
+  if (!d) return;
+  document.getElementById('sheet').innerHTML = `
+    <div class="grab"></div>
+    <div class="detail-art">${pic(d, ART.artSVG(d, 320, 200))}</div>
+    <h3>${esc(d.label)}</h3>
+    <p class="sub">Starting at ${rupee(d.from)}</p>
+    <div class="meta">
+      <div><b>${esc(d.time)}</b><span>Time needed</span></div>
+      <div><b>${esc(d.cover)}</b><span>Coverage</span></div>
+      <div><b>7–10 days</b><span>Stain lasts</span></div>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink);line-height:1.6;margin:0 0 16px">${esc(d.blurb)}</p>
+    <a class="submit" style="display:block;text-decoration:none;text-align:center"
+       href="${waLink('Hi ' + C.business.name + '! I like the "' + d.label + '" design. Is it available?')}"
+       target="_blank" rel="noopener">Book this on WhatsApp</a>
+    <button class="linkbtn" style="display:block;margin:12px auto 0" onclick="toggleFav('${esc(d.id)}')">
+      ${favs.has(d.id) ? '♥ Saved' : '♡ Save to favourites'}</button>`;
+  document.getElementById('scrim').classList.add('on');
+  document.getElementById('sheet').classList.add('on');
+}
+function toggleFav(id) {
+  favs.has(id) ? favs.delete(id) : favs.add(id);
+  try { localStorage.setItem('sm_favs', JSON.stringify([...favs])); } catch (e) {}
+  render(); openDesign(id);
+}
+function closeSheet() {
+  document.getElementById('scrim').classList.remove('on');
+  document.getElementById('sheet').classList.remove('on');
+}
+
+/* ---------------- pricing & form ---------------- */
+function renderPrice() {
+  document.getElementById('price').innerHTML = C.pricing.packages.map(p => `
+    <div class="pcard ${state.pkg === p.name ? 'on' : ''}" onclick="setPkg('${esc(p.name)}')">
+      ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ''}
+      <div class="pn">${esc(p.name)}</div>
+      <div class="pp">${rupee(p.price)}</div>
+      <div class="pd">${p.desc || ''}</div>
+    </div>`).join('');
+}
+function setPkg(n) { state.pkg = n; renderPrice(); renderChips(); }
+function renderChips() {
+  document.getElementById('occ').innerHTML = C.booking.occasions.map(o =>
+    `<button class="chip ${state.occasion === o ? 'on' : ''}" onclick="setOcc('${esc(o)}')">${esc(o)}</button>`).join('');
+  document.getElementById('pkgChips').innerHTML = C.pricing.packages.map(p =>
+    `<button class="chip ${state.pkg === p.name ? 'on' : ''}" onclick="setPkg('${esc(p.name)}')">${esc(p.name)} · ${rupee(p.price)}</button>`).join('');
+}
+function setOcc(o) { state.occasion = o; renderChips(); }
+
+function onStyleChange() {
+  const title = document.getElementById('f_style').value;
+  const sec = (C.sections || []).find(s => s.title === title) || { items: [] };
+  document.getElementById('f_design').innerHTML =
+    `<option value="">${esc(C.booking.designPlaceholder || 'No preference')}</option>` +
+    (sec.items || []).map(d => `<option value="${esc(d.label)}">${esc(d.label)} · from ${rupee(d.from)}</option>`).join('');
+}
+
+function goBook() {
+  document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => document.getElementById('f_name').focus(), 500);
+}
+
+function submitBooking() {
+  const name  = document.getElementById('f_name').value.trim();
+  const phone = document.getElementById('f_phone').value.replace(/\D/g, '');
+  const date  = document.getElementById('f_date').value;
+  const err   = document.getElementById('f_err');
+  const bad = [];
+  if (name.length < 2) bad.push('your name');
+  if (phone.length < 10) bad.push('a 10-digit phone number');
+  if (!date) bad.push('an event date');
+  if (bad.length) { err.textContent = 'Please add ' + bad.join(', ') + '.'; err.classList.add('show'); return; }
+  err.classList.remove('show');
+
+  const ppl   = Math.max(1, parseInt(document.getElementById('f_ppl').value || '1', 10));
+  const loc   = document.getElementById('f_loc').value;
+  const style = document.getElementById('f_style').value;
+  const dsn   = document.getElementById('f_design').value;
+  const styleLine = dsn ? `${style} — ${dsn}` : style;
+  const note  = document.getElementById('f_note').value.trim();
+  const pkg   = C.pricing.packages.find(p => p.name === state.pkg) || C.pricing.packages[0];
+  const total = pkg.price * ppl;
+  const nice  = new Date(date + 'T00:00:00').toLocaleDateString('en-IN',
+                  { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const ref   = 'SM' + String(Math.floor(Math.random() * 9000 + 1000));
+  const text  = `Hi ${C.business.name}! Booking request ${ref}\nName: ${name}\nPhone: ${phone}\nDate: ${nice}\n`
+              + `Style: ${styleLine}\nOccasion: ${state.occasion}\nPackage: ${pkg.name} x${ppl}\n`
+              + `Location: ${loc}\nEstimate: ${rupee(total)}` + (note ? `\nNote: ${note}` : '');
+
+  document.getElementById('formWrap').innerHTML = `
+    <div class="ok">
+      <div class="tick">✓</div>
+      <h3>Request ready, ${esc(name.split(' ')[0])}!</h3>
+      <p>Send it on WhatsApp and ${esc(C.business.name)} will confirm within 2 hours. Reference <b>${ref}</b>.</p>
+      <div class="summary">
+        <div><span>Date</span><span>${esc(nice)}</span></div>
+        <div><span>Style</span><span>${esc(styleLine)}</span></div>
+        <div><span>Occasion</span><span>${esc(state.occasion)}</span></div>
+        <div><span>Package</span><span>${esc(pkg.name)} × ${ppl}</span></div>
+        <div><span>Location</span><span>${esc(loc)}</span></div>
+        <div style="border-top:1px solid var(--line);margin-top:6px;padding-top:8px">
+          <span>Estimate</span><span>${rupee(total)}</span></div>
+      </div>
+      <a class="submit" style="display:block;text-decoration:none;text-align:center"
+         href="${waLink(text)}" target="_blank" rel="noopener">Send on WhatsApp</a>
+      <button class="linkbtn" style="margin-top:12px" onclick="location.reload()">Make another booking</button>
+    </div>`;
+  document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ---------------- assistant ---------------- */
+let aiOpen = false, aiSeeded = false;
+function toggleAI() {
+  aiOpen = !aiOpen;
+  document.getElementById('aiPanel').classList.toggle('on', aiOpen);
+  if (aiOpen && !aiSeeded) {
+    aiSeeded = true;
+    bubble('bot', C.assistant.greeting);
+    document.getElementById('aiQr').innerHTML = (C.assistant.quick || [])
+      .map((q, i) => `<button onclick="askIdx(${i})">${esc(q)}</button>`).join('');
+  }
+  if (aiOpen) setTimeout(() => document.getElementById('aiIn').focus(), 220);
+}
+function askIdx(i) { ask(C.assistant.quick[i]); }
+function bubble(who, text) {
+  const el = document.createElement('div');
+  el.className = 'msg ' + who; el.textContent = text;
+  const body = document.getElementById('aiBody');
+  body.appendChild(el); body.scrollTop = body.scrollHeight; return el;
+}
+function send() {
+  const el = document.getElementById('aiIn');
+  const q = el.value.trim(); if (!q) return;
+  el.value = ''; ask(q);
+}
+async function ask(q) {
+  bubble('me', q);
+  document.getElementById('aiQr').innerHTML = '';
+  const t = document.createElement('div');
+  t.className = 'msg bot typing'; t.innerHTML = '<i></i><i></i><i></i>';
+  const body = document.getElementById('aiBody');
+  body.appendChild(t); body.scrollTop = body.scrollHeight;
+
+  let answer = null;
+  for (const rule of (C.assistant.rules || [])) {
+    try { if (new RegExp(rule.k, 'i').test(q)) { answer = rule.r; break; } } catch (e) {}
+  }
+  if (!answer) answer = C.assistant.fallback;
+  await new Promise(r => setTimeout(r, 480));
+  t.remove(); bubble('bot', answer);
+}
+
+/* ---------------- installable app ---------------- */
+let installEvent = null;
+addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  installEvent = e;
+  const b = document.getElementById('installBtn');
+  if (b) b.classList.add('show');
+});
+function installApp() {
+  if (!installEvent) return;
+  installEvent.prompt();
+  installEvent.userChoice.finally(() => {
+    installEvent = null;
+    const b = document.getElementById('installBtn');
+    if (b) b.classList.remove('show');
+  });
+}
+addEventListener('appinstalled', () => {
+  const b = document.getElementById('installBtn');
+  if (b) b.classList.remove('show');
+});
+if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator
+    && location.protocol !== 'file:' && !window.__NO_SW__) {
+  addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      // if a newer worker is waiting, let it take over straight away
+      if (reg.waiting) reg.waiting.postMessage('skipWaiting');
+      reg.addEventListener('updatefound', () => {
+        const sw = reg.installing;
+        if (sw) sw.addEventListener('statechange', () => {
+          if (sw.state === 'installed') sw.postMessage('skipWaiting');
+        });
+      });
+    }).catch(() => {});
+
+    // when a new worker takes control, reload once so the new code is in use
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (reloaded) return;
+      reloaded = true;
+      location.reload();
+    });
+  });
+}
+</script>
+</body>
+</html>

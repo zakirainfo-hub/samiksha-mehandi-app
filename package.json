@@ -1,0 +1,12 @@
+{
+  "name": "samikshas-mehendi-art",
+  "version": "1.0.0",
+  "description": "Website and admin panel for Samiksha's Mehendi Art",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build:single": "node build-single-file.js"
+  },
+  "engines": { "node": ">=16" },
+  "private": true
+}
