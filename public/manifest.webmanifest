@@ -1,0 +1,16 @@
+{
+  "name": "Samiksha's Mehendi Art",
+  "short_name": "Samiksha Mehendi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF3E7",
+  "theme_color": "#D9531E",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

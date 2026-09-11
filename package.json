@@ -5,8 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build:single": "node build-single-file.js"
+    "build:single": "node build-single-file.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
-  "engines": { "node": ">=16" },
-  "private": true
+  "engines": {
+    "node": ">=16"
+  },
+  "private": true,
+  "devDependencies": {
+    "undici": "^8.10.2",
+    "wrangler": "^4.131.0"
+  }
 }
