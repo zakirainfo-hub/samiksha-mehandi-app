@@ -13,6 +13,14 @@ const IMAGE_TYPES = new Map([
   ["image/avif", ".avif"],
 ]);
 
+const SERVICE_PAGES = new Map([
+  ["/mehendi-artist-mumbai", "/mehendi-artist-mumbai.html"],
+  ["/bridal-mehendi-mumbai", "/bridal-mehendi-mumbai.html"],
+  ["/arabic-mehendi-mumbai", "/arabic-mehendi-mumbai.html"],
+  ["/designer-mehendi-mumbai", "/designer-mehendi-mumbai.html"],
+  ["/figures-mehendi-mumbai", "/figures-mehendi-mumbai.html"],
+]);
+
 function json(body, status = 200, headers = {}) {
   return new Response(JSON.stringify(body), {
     status,
@@ -65,6 +73,11 @@ export default {
 
     if (path === "/admin" || path === "/admin/") {
       return env.ASSETS.fetch(new Request(new URL("/admin.html", url), request));
+    }
+
+    if (SERVICE_PAGES.has(path) || SERVICE_PAGES.has(path.replace(/\/$/, ""))) {
+      const file = SERVICE_PAGES.get(path) || SERVICE_PAGES.get(path.replace(/\/$/, ""));
+      return env.ASSETS.fetch(new Request(new URL(file, url), request));
     }
 
     if (path === "/api/content" && request.method === "GET") {
