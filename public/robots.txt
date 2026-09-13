@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://samiksha-mehandi.sameerramteke66.workers.dev/sitemap.xml
