@@ -147,13 +147,13 @@ h1.title .l2{display:block;font-size:clamp(21px,6.8vw,29px);color:var(--orange);
 .sec-sub{text-align:center;font-size:11.5px;color:var(--muted);margin:0 0 15px;padding:0 8px}
 
 /* ---------------- gallery ---------------- */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 12px}
 .tile{border:0;padding:0;background:none;cursor:pointer;text-align:center;display:flex;flex-direction:column;gap:7px;
   -webkit-tap-highlight-color:transparent}
-.tile .thumb{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;
-  box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .15s,box-shadow .15s}
+.tile .thumb{position:relative;width:100%;aspect-ratio:1083/1452;border-radius:10px;overflow:hidden;
+  box-shadow:none;border:0;background:transparent;transition:transform .15s,filter .15s}
 .tile:active .thumb{transform:scale(.97)}
-.tile:hover .thumb{transform:translateY(-2px);box-shadow:var(--shadow-l)}
+.tile:hover .thumb{transform:translateY(-2px);filter:brightness(1.02)}
 .tile .thumb svg,.tile .thumb img{width:100%;height:100%;display:block;object-fit:cover}
 .tile .lbl{font-size:12.5px;font-weight:700;color:var(--brown);line-height:1.25}
 .fav{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;
@@ -346,7 +346,7 @@ h1.title .l2{display:block;font-size:clamp(21px,6.8vw,29px);color:var(--orange);
   .topbar .brand{font-size:17px}
   .banner{margin:18px 20px 0;padding:26px 24px 20px;border-radius:28px}
   .hero-grid{gap:20px}
-  .gal{grid-template-columns:repeat(4,1fr);gap:10px}
+  .gal{grid-template-columns:repeat(4,1fr);gap:16px 12px}
   .tile .lbl{font-size:12px}
   .rev{flex-basis:58%}
   .trust div{padding:12px 10px}
@@ -402,7 +402,7 @@ h1.title .l2{display:block;font-size:clamp(21px,6.8vw,29px);color:var(--orange);
   .sec-h{gap:14px;margin-bottom:8px}
   .sec-sub{font-size:13px;margin-bottom:24px}
 
-  .gal{gap:18px}
+  .gal{gap:22px 18px}
   .tile .lbl{font-size:13.5px}
 
   .price{grid-template-columns:repeat(3,1fr);gap:18px}
@@ -452,7 +452,7 @@ h1.title .l2{display:block;font-size:clamp(21px,6.8vw,29px);color:var(--orange);
   .collage{max-height:370px}
   .sec{padding-top:62px}
   .sec-h h2{font-size:29px}
-  .gal{gap:22px}
+  .gal{gap:26px 22px}
   .tile .lbl{font-size:14px}
 }
 
